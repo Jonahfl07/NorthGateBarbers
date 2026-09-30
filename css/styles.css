@@ -147,3 +147,63 @@ address { font-style: normal; font-size: 1.1rem; }
   html { scroll-behavior: auto; }
   .btn { transition: none; }
 }
+
+/* ==========================================================================
+   Motion effects (all gated behind the .js class set by js/main.js)
+   ========================================================================== */
+
+/* ---------- Sticky header slide ---------- */
+.site-header {
+  transition: transform 300ms ease;
+  will-change: transform;
+}
+.site-header.is-hidden { transform: translateY(-100%); }
+.site-header:focus-within { transform: none; } /* keyboard focus always reveals it */
+
+/* ---------- Section fade + slide in ---------- */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- Typewriter ---------- */
+.js-typewriter .hero h1 { visibility: hidden; } /* removed by JS once characters are wrapped */
+.tw-char { visibility: hidden; }
+.tw-char.is-typed { visibility: visible; }
+
+.tw-cursor {
+  display: inline-block;
+  position: relative;
+  width: 0;          /* zero width: the cursor never shifts the text */
+  height: 1em;
+  vertical-align: -.1em;
+}
+.tw-cursor::after {
+  content: "";
+  position: absolute;
+  left: .05em;
+  top: .05em;
+  bottom: 0;
+  width: 2px;
+  background: var(--accent);
+  animation: tw-blink 1s steps(1) infinite;
+}
+.tw-cursor.is-done {
+  opacity: 0;
+  transition: opacity 600ms ease 1.5s; /* blink a little longer, then fade away */
+}
+@keyframes tw-blink { 50% { opacity: 0; } }
+
+/* ---------- Reduced motion: show everything normally ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .site-header, .site-header.is-hidden { transform: none; transition: none; }
+  .js .reveal { opacity: 1; transform: none; transition: none; }
+  .js-typewriter .hero h1 { visibility: visible; }
+  .tw-char { visibility: visible; }
+  .tw-cursor { display: none; }
+}
