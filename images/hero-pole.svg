@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 520" role="img" aria-label="Decorative illustration of a barber pole" focusable="false">
+  <defs>
+    <clipPath id="tube"><rect x="140" y="90" width="120" height="340" rx="14"/></clipPath>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#000" stop-opacity=".45"/>
+      <stop offset=".3" stop-color="#fff" stop-opacity=".18"/>
+      <stop offset=".6" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity=".5"/>
+    </linearGradient>
+  </defs>
+  <g fill="none" stroke="#c9a45c" stroke-opacity=".25">
+    <circle cx="200" cy="260" r="230" stroke-width="1"/>
+    <circle cx="200" cy="260" r="180" stroke-width="1"/>
+    <circle cx="200" cy="260" r="130" stroke-width="1"/>
+  </g>
+  <rect x="150" y="440" width="100" height="22" rx="6" fill="#c9a45c"/>
+  <rect x="165" y="462" width="70" height="14" rx="4" fill="#8f7338"/>
+  <g clip-path="url(#tube)">
+    <rect x="140" y="90" width="120" height="340" fill="#1c1c1c"/>
+    <polygon points="130,60 270,-10 270,35 130,105" fill="#c9a45c"/>
+    <polygon points="130,150 270,80 270,125 130,195" fill="#c9a45c"/>
+    <polygon points="130,240 270,170 270,215 130,285" fill="#c9a45c"/>
+    <polygon points="130,330 270,260 270,305 130,375" fill="#c9a45c"/>
+    <polygon points="130,420 270,350 270,395 130,465" fill="#c9a45c"/>
+    <polygon points="130,510 270,440 270,485 130,555" fill="#c9a45c"/>
+    <polygon points="130,600 270,530 270,575 130,645" fill="#c9a45c"/>
+    <rect x="140" y="90" width="120" height="340" fill="url(#glass)"/>
+  </g>
+  <rect x="140" y="90" width="120" height="340" rx="14" fill="none" stroke="#c9a45c" stroke-width="4"/>
+  <rect x="130" y="68" width="140" height="28" rx="8" fill="#c9a45c"/>
+  <rect x="150" y="44" width="100" height="26" rx="8" fill="#8f7338"/>
+  <circle cx="200" cy="30" r="16" fill="#c9a45c"/>
+  <rect x="130" y="424" width="140" height="22" rx="8" fill="#c9a45c"/>
+</svg>

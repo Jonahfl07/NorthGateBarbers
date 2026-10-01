@@ -6,15 +6,29 @@
   <title>Northgate Barbers | Barber Shop in Lancaster</title>
   <meta name="description" content="Northgate Barbers on Market Street, Lancaster. Skin fades, classic cuts, beard trims and hot towel shaves. Book online in seconds.">
   <meta name="theme-color" content="#141414">
+  <meta name="robots" content="noindex, nofollow">
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="images/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" sizes="180x180">
 
-  <!-- Open Graph -->
+  <!-- Open Graph / Twitter.
+       The absolute URL below (https://storied-dusk-b88534.netlify.app) appears in og:url,
+       og:image and twitter:image. If you rename the site, find-and-replace it in this file. -->
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Northgate Barbers">
+  <meta property="og:url" content="https://storied-dusk-b88534.netlify.app/">
   <meta property="og:title" content="Northgate Barbers | Barber Shop in Lancaster">
   <meta property="og:description" content="Skin fades, classic cuts, beard trims and hot towel shaves on Market Street, Lancaster.">
-  <meta property="og:image" content="images/og-image.svg">
+  <meta property="og:image" content="https://storied-dusk-b88534.netlify.app/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Northgate Barbers: cuts, fades and shaves in Lancaster, in gold lettering on a dark background.">
   <meta property="og:locale" content="en_GB">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Northgate Barbers | Barber Shop in Lancaster">
+  <meta name="twitter:description" content="Skin fades, classic cuts, beard trims and hot towel shaves on Market Street, Lancaster.">
+  <meta name="twitter:image" content="https://storied-dusk-b88534.netlify.app/images/og-image.png">
+  <meta name="twitter:image:alt" content="Northgate Barbers: cuts, fades and shaves in Lancaster, in gold lettering on a dark background.">
 
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/main.js"></script>
@@ -22,10 +36,20 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
 
+  <div class="demo-banner">
+    <p>Sample site by <a href="https://lewiswebstudio.co.uk" target="_blank" rel="noopener noreferrer">Lewis Web Studio</a>. Northgate Barbers is a fictional business.</p>
+  </div>
+
   <header class="site-header">
     <div class="container header-inner">
       <a class="logo" href="#top">Northgate <span>Barbers</span></a>
-      <nav aria-label="Main">
+      <button class="btn header-book" type="button" data-demo-message="Demo only. On a real site this opens the barber's Fresha booking page.">Book now</button>
+      <!-- Menu button: only shown when JavaScript is running (see .js .nav-toggle in the CSS) -->
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+        <span class="visually-hidden">Menu</span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
         <ul class="nav-links">
           <li><a href="#services">Services</a></li>
           <li><a href="#gallery">Gallery</a></li>
@@ -33,59 +57,96 @@
           <li><a href="#location">Find us</a></li>
         </ul>
       </nav>
-      <a class="btn" href="https://www.fresha.com/" target="_blank" rel="noopener">Book now</a>
     </div>
   </header>
 
   <main id="main">
     <section class="hero" id="top">
-      <div class="container">
-        <p class="eyebrow">Lancaster · Est. 2012</p>
-        <h1>Sharp cuts.<br>Proper barbering.</h1>
-        <p class="lead">Fades, tapers, beard work and hot towel shaves, in the heart of Lancaster.</p>
-        <a class="btn btn-large" href="https://www.fresha.com/" target="_blank" rel="noopener">Book your chair</a>
-        <p class="hero-note">Tue–Fri 9–6 · Sat 8–4</p>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Lancaster · Est. 2012</p>
+          <h1>Sharp cuts.<br>Proper barbering.</h1>
+          <p class="lead">Fades, tapers, beard work and hot towel shaves, in the heart of Lancaster.</p>
+          <button class="btn btn-large" type="button" data-demo-message="Demo only. On a real site this opens the barber's Fresha booking page.">Book your chair</button>
+          <p class="hero-note">Tue–Fri 9–6 · Sat 8–4</p>
+        </div>
+        <div class="hero-art">
+          <img src="images/hero-pole.svg" alt="" width="400" height="520">
+        </div>
       </div>
     </section>
 
     <section class="section" id="services" aria-labelledby="services-title">
       <div class="container">
         <h2 id="services-title">Services &amp; prices</h2>
-        <table class="price-table">
-          <caption class="visually-hidden">Services and prices</caption>
-          <thead>
-            <tr><th scope="col">Service</th><th scope="col">Time</th><th scope="col">Price</th></tr>
-          </thead>
-          <tbody>
-            <tr><th scope="row">Skin fade</th><td>45 min</td><td>£18</td></tr>
-            <tr><th scope="row">Classic cut</th><td>30 min</td><td>£15</td></tr>
-            <tr><th scope="row">Cut &amp; beard trim</th><td>50 min</td><td>£22</td></tr>
-            <tr><th scope="row">Beard trim</th><td>20 min</td><td>£10</td></tr>
-            <tr><th scope="row">Hot towel shave</th><td>30 min</td><td>£16</td></tr>
-            <tr><th scope="row">Kids cut (under 12)</th><td>30 min</td><td>£12</td></tr>
-            <tr><th scope="row">Senior cut (65+)</th><td>30 min</td><td>£12</td></tr>
-          </tbody>
-        </table>
-        <p class="small">Prices are examples for this portfolio project.</p>
+        <div class="services-layout">
+          <div class="services-main">
+            <table class="price-table">
+              <caption class="visually-hidden">Services and prices</caption>
+              <thead>
+                <tr><th scope="col">Service</th><th scope="col">Time</th><th scope="col">Price</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Skin fade</th><td>45 min</td><td>£18</td></tr>
+                <tr><th scope="row">Classic cut</th><td>30 min</td><td>£15</td></tr>
+                <tr><th scope="row">Cut &amp; beard trim</th><td>50 min</td><td>£22</td></tr>
+                <tr><th scope="row">Beard trim</th><td>20 min</td><td>£10</td></tr>
+                <tr><th scope="row">Hot towel shave</th><td>30 min</td><td>£16</td></tr>
+                <tr><th scope="row">Kids cut (under 12)</th><td>30 min</td><td>£12</td></tr>
+                <tr><th scope="row">Senior cut (65+)</th><td>30 min</td><td>£12</td></tr>
+              </tbody>
+            </table>
+            <p class="small">Prices are examples for this portfolio project.</p>
+          </div>
+          <aside class="side-card" aria-labelledby="side-card-title">
+            <h3 id="side-card-title">Opening hours</h3>
+            <ul class="hours-summary">
+              <li><span>Tue–Fri</span><span>9am – 6pm</span></li>
+              <li><span>Saturday</span><span>8am – 4pm</span></li>
+              <li><span>Sun–Mon</span><span>Closed</span></li>
+            </ul>
+            <button class="btn" type="button" data-demo-message="Demo only. On a real site this opens the barber's Fresha booking page.">Book now</button>
+          </aside>
+        </div>
       </div>
     </section>
 
     <section class="section section-alt" id="gallery" aria-labelledby="gallery-title">
       <div class="container">
         <h2 id="gallery-title">Gallery</h2>
+        <!-- To use a real photo, change only the src (and alt) on that tile's <img> line.
+             Keep width/height at the tile's ratio. See "Gallery" in the README. -->
         <ul class="gallery">
-          <li><img src="images/gallery-1.svg" alt="Placeholder image of a skin fade haircut" width="600" height="600" loading="lazy"></li>
-          <li><img src="images/gallery-2.svg" alt="Placeholder image of a classic taper haircut" width="600" height="600" loading="lazy"></li>
-          <li><img src="images/gallery-3.svg" alt="Placeholder image of a beard trim" width="600" height="600" loading="lazy"></li>
-          <li><img src="images/gallery-4.svg" alt="Placeholder image of a cropped, textured haircut" width="600" height="600" loading="lazy"></li>
-          <li><img src="images/gallery-5.svg" alt="Placeholder image of a hot towel shave" width="600" height="600" loading="lazy"></li>
-          <li><img src="images/gallery-6.svg" alt="Placeholder image of the shop interior" width="600" height="600" loading="lazy"></li>
+          <li class="tile-feature"><figure>
+            <img src="images/gallery-1.svg" alt="Placeholder image of a skin fade haircut" width="1200" height="1200" loading="lazy">
+            <figcaption>Skin fade</figcaption>
+          </figure></li>
+          <li><figure>
+            <img src="images/gallery-2.svg" alt="Placeholder image of a classic taper haircut" width="600" height="600" loading="lazy">
+            <figcaption>Classic taper</figcaption>
+          </figure></li>
+          <li class="tile-tall"><figure>
+            <img src="images/gallery-3.svg" alt="Placeholder image of a beard trim" width="600" height="1200" loading="lazy">
+            <figcaption>Beard trim</figcaption>
+          </figure></li>
+          <li><figure>
+            <img src="images/gallery-4.svg" alt="Placeholder image of a cropped, textured haircut" width="600" height="600" loading="lazy">
+            <figcaption>Textured crop</figcaption>
+          </figure></li>
+          <li class="tile-wide"><figure>
+            <img src="images/gallery-5.svg" alt="Placeholder image of a hot towel shave" width="1200" height="600" loading="lazy">
+            <figcaption>Hot towel shave</figcaption>
+          </figure></li>
+          <li class="tile-wide"><figure>
+            <img src="images/gallery-6.svg" alt="Placeholder image of the shop interior" width="1200" height="600" loading="lazy">
+            <figcaption>Inside the shop</figcaption>
+          </figure></li>
         </ul>
       </div>
     </section>
 
     <section class="section" id="about" aria-labelledby="about-title">
-      <div class="container narrow">
+      <div class="container about-grid">
         <h2 id="about-title">About us</h2>
         <p>Northgate Barbers has been cutting hair on Market Street since 2012. We are a small, friendly shop that believes a good haircut takes time, so we never rush a customer and we never double-book a chair.</p>
         <p>Whether you want a sharp skin fade, a traditional short back and sides, or a relaxing hot towel shave, you will get an honest chat, a clean finish and a fair price.</p>
@@ -103,6 +164,7 @@
               12 Market Street<br>
               Lancaster LA1 1HP
             </address>
+            <p class="small">Fictional address, demo only.</p>
             <h3>Opening hours</h3>
             <table class="hours">
               <caption class="visually-hidden">Opening hours</caption>
@@ -119,10 +181,10 @@
           </div>
           <div class="map">
             <iframe
-              title="Map showing Northgate Barbers on Market Street, Lancaster"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=-2.8060%2C54.0440%2C-2.7950%2C54.0490&amp;layer=mapnik&amp;marker=54.0466%2C-2.8007"
+              title="Map of central Lancaster"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=-2.8250%2C54.0380%2C-2.7770%2C54.0590&amp;layer=mapnik"
               loading="lazy"></iframe>
-            <p class="small"><a href="https://www.openstreetmap.org/?mlat=54.0466&amp;mlon=-2.8007#map=17/54.0466/-2.8007">View larger map</a></p>
+            <p class="small">Map is illustrative. <a href="https://www.openstreetmap.org/#map=15/54.0484/-2.8010" target="_blank" rel="noopener noreferrer">View larger map</a></p>
           </div>
         </div>
       </div>
@@ -131,13 +193,30 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>&copy; <span id="year">2026</span> Northgate Barbers. A fictional business for portfolio purposes.</p>
+      <div class="footer-text">
+        <p>&copy; <span id="year">2026</span> Northgate Barbers. A fictional business for portfolio purposes.</p>
+        <p>Built by <a href="https://lewiswebstudio.co.uk" target="_blank" rel="noopener noreferrer">Lewis Web Studio</a></p>
+      </div>
+      <!-- These are buttons that open the demo dialog. To make one a real link later, replace the
+           whole <button> with: <a href="https://your-real-url" target="_blank" rel="noopener noreferrer">Label</a> -->
       <ul class="footer-links">
-        <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
-        <li><a href="https://www.google.com/maps" target="_blank" rel="noopener">Google reviews</a></li>
-        <li><a href="https://www.fresha.com/" target="_blank" rel="noopener">Book on Fresha</a></li>
+        <li><button class="link-btn" type="button" data-demo-message="Demo only. On a real site this opens the barber's Instagram page.">Instagram</button></li>
+        <li><button class="link-btn" type="button" data-demo-message="Demo only. On a real site this opens the barber's Google reviews page.">Google reviews</button></li>
+        <li><button class="link-btn" type="button" data-demo-message="Demo only. On a real site this opens the barber's Fresha booking page.">Book on Fresha</button></li>
       </ul>
     </div>
   </footer>
+
+  <!-- Demo dialog. Every element with a data-demo-message attribute opens this and shows that message.
+       To swap a trigger for a real link, see the comment in the footer above. -->
+  <dialog id="demo-dialog" aria-labelledby="demo-dialog-title">
+    <div class="dialog-body">
+      <h2 id="demo-dialog-title">Demo only</h2>
+      <p data-dialog-text></p>
+      <form method="dialog">
+        <button class="btn" autofocus>Close</button>
+      </form>
+    </div>
+  </dialog>
 </body>
 </html>

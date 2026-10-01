@@ -42,7 +42,10 @@ function initHeader() {
   let ticking = false;
 
   const show = () => header.classList.remove('is-hidden');
-  const hide = () => header.classList.add('is-hidden');
+  const hide = () => {
+    if (header.querySelector('.site-nav.is-open')) return; // keep the header while the menu is open
+    header.classList.add('is-hidden');
+  };
 
   function update() {
     ticking = false;
@@ -170,10 +173,72 @@ function initTypewriter() {
   setTimeout(typeNext, CONFIG.typeStartDelayMs);
 }
 
+/* ---------- Mobile navigation (menu button) ---------- */
+function initNav() {
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.getElementById('site-nav');
+  if (!toggle || !nav) return;
+
+  const setOpen = (open) => {
+    toggle.setAttribute('aria-expanded', String(open));
+    nav.classList.toggle('is-open', open);
+  };
+
+  toggle.addEventListener('click', () => {
+    setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+  });
+
+  // Close after choosing a link.
+  nav.addEventListener('click', (e) => {
+    if (e.target.closest('a')) setOpen(false);
+  });
+
+  // Escape closes the menu and returns focus to the button.
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && nav.classList.contains('is-open')) {
+      setOpen(false);
+      toggle.focus();
+    }
+  });
+
+  // If the window grows to the desktop layout, reset the state.
+  window.matchMedia('(min-width: 48rem)').addEventListener('change', (e) => {
+    if (e.matches) setOpen(false);
+  });
+}
+
+/* ---------- Demo dialog ----------
+   Any element with data-demo-message opens the dialog and shows that message.
+   To turn a trigger into a real link later, replace the <button> with an <a href="..."> in index.html. */
+function initDialog() {
+  const dialog = document.getElementById('demo-dialog');
+  if (!dialog || typeof dialog.showModal !== 'function') return;
+  const text = dialog.querySelector('[data-dialog-text]');
+  let opener = null;
+
+  document.addEventListener('click', (e) => {
+    const trigger = e.target.closest('[data-demo-message]');
+    if (trigger) {
+      opener = trigger;
+      text.textContent = trigger.dataset.demoMessage;
+      dialog.showModal();   // moves focus inside, makes the page behind inert, Escape closes it
+    } else if (e.target === dialog) {
+      dialog.close();       // click on the dark backdrop
+    }
+  });
+
+  dialog.addEventListener('close', () => {
+    if (opener) opener.focus();
+    opener = null;
+  });
+}
+
 /* ==========================================================================
    Start-up
    ========================================================================== */
 document.addEventListener('DOMContentLoaded', () => {
+  initNav();
+  initDialog();
   initHeader();
   try {
     initTypewriter();

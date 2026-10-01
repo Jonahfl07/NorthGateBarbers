@@ -1,0 +1,20 @@
+# Netlify settings. Headers here only apply on Netlify, not on a local server.
+
+[build]
+  publish = "."
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Only load scripts, styles, images and fonts from this site; allow the OpenStreetMap map iframe.
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; frame-src https://www.openstreetmap.org"
+    # Stops browsers guessing file types, which blocks some content-sniffing attacks.
+    X-Content-Type-Options = "nosniff"
+    # Sends other sites only the origin (not the full page address) when a link is followed.
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    # Switches off browser features this site never uses.
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=(), accelerometer=(), gyroscope=(), magnetometer=()"
+    # Stops other sites putting this one inside a frame (clickjacking).
+    X-Frame-Options = "DENY"
+    # Asks search engines not to index this demo. Do not add a robots.txt Disallow: crawlers must be able to read this.
+    X-Robots-Tag = "noindex, nofollow"
